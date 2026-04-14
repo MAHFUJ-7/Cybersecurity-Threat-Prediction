@@ -1,16 +1,16 @@
-# Cybersecurity Threat Prediction — Malware Detection Using Machine Learning
+# Cybersecurity Threat Prediction — Ransomware Detection Using Machine Learning
 
-This project provides a machine learning pipeline for malware detection, comparing multiple classifiers on a PE-file malware dataset.
+This project provides a machine learning pipeline for ransomware detection, comparing multiple classifiers on ransomware behavior telemetry.
 
 ## What This Includes
 
-- **Google Colab notebook** ([`notebooks/Malware_Detection_ML.ipynb`](notebooks/Malware_Detection_ML.ipynb)) that replicates the lab report analysis end-to-end.
-- Five ML models compared: Random Forest, Decision Tree, Logistic Regression, SVM, and KNN.
+- **Google Colab notebook** ([`ransomware_detection_colab.ipynb`](ransomware_detection_colab.ipynb)) — ransomware detection lab report with six ML models end-to-end.
+- Six ML models compared: Random Forest, Decision Tree, Logistic Regression, SVM, KNN, and Naive Bayes.
 - Classification reports, confusion matrices, and feature importance plots for each model.
-- Synthetic telemetry generation for fast experimentation.
-- Model training with preprocessing for numeric and categorical features.
-- Evaluation with accuracy, precision, recall, F1, confusion matrix, and ROC-AUC.
-- Batch prediction with ransomware probability outputs.
+- Synthetic ransomware behavior telemetry generation (no external dataset required).
+- Model training with preprocessing for numeric features.
+- Evaluation with accuracy, precision, recall, F1, confusion matrix, and model comparison chart.
+- CLI pipeline for batch prediction with ransomware probability outputs.
 
 ## Feature Example
 
@@ -35,16 +35,17 @@ The baseline synthetic dataset includes features that are commonly useful in ran
 
 ## Google Colab Notebook (Lab Report)
 
-The primary deliverable is `notebooks/Malware_Detection_ML.ipynb`. Open it in Google Colab:
+The primary deliverable is [`ransomware_detection_colab.ipynb`](ransomware_detection_colab.ipynb). Open it in Google Colab:
 
-1. Upload `dataset_malwares.csv` from the [Kaggle PE Files Malwares dataset](https://www.kaggle.com/datasets/maidaly/pe-files-malwares) to Colab.
-2. Run all cells. The notebook trains and evaluates five models:
+1. Run all cells — the notebook generates its own synthetic ransomware telemetry dataset (no upload needed).
+2. It trains and evaluates six models:
    - **Random Forest** — classification report, confusion matrix, feature importance
    - **Decision Tree** — classification report, confusion matrix, feature importance
    - **Logistic Regression** — classification report, confusion matrix
    - **SVM** — classification report, confusion matrix
    - **KNN** — classification report, confusion matrix
-3. A final comparison table ranks all models by accuracy.
+   - **Naive Bayes** — classification report, confusion matrix
+3. A final comparison bar chart ranks all models by accuracy.
 
 ## Quick Start (CLI Pipeline)
 
